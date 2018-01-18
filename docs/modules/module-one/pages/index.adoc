@@ -1,0 +1,15 @@
+= Module One Overview
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+// Settings
+:idprefix:
+:idseparator: -
+
+This is Module One in Component B.
+
+This page is sourced from `demo-component-b/docs/modules/module-one/pages/index.adoc`.
+
+A cross reference to this page from a page also in the Component B, Module One: `\xref:index.adoc[]`.
+
+A cross reference to this page from a page in Component B, but *NOT* in the Module One module: `\xref:module-one:index.adoc[]`.
