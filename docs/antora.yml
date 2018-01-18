@@ -1,0 +1,6 @@
+name: demo-component-b
+title: Docs Component B
+version: master
+nav:
+- modules/ROOT/nav.adoc
+- modules/module-one/nav.adoc
