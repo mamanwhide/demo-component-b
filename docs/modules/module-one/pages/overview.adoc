@@ -1,0 +1,17 @@
+= Module One Overview
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+// Settings
+:idprefix:
+:idseparator: -
+
+This is version 1.0.0 of Module One in Component B.
+
+This page is sourced from [.path]_demo-component-b/docs/modules/module-one/pages/overview.adoc_.
+
+To create a cross reference *to this page from another page in Module One*, the xref syntax would be `\xref:overview.adoc[]`.
+
+To create a cross reference *to this page from a page in the ROOT module of Component B*, the xref syntax would be `\xref:module-one:overview.adoc[]`.
+
+To create a cross reference *to this page from a page in Component A*, the xref syntax would be `xref:1.0@component-b:module-one:overview.adoc[]`.

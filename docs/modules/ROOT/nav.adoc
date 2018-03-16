@@ -1,1 +1,1 @@
-* xref:index.adoc[Component B]
+* xref:index.adoc[The B Overview]

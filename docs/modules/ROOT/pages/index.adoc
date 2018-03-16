@@ -6,10 +6,12 @@ endif::[]
 :idprefix:
 :idseparator: -
 
-This is Component B.
+This is version 1.0.0 of Component B.
 
-This page is sourced from `demo-component-b/docs/modules/ROOT/pages/index.adoc`.
+This page is sourced from the AsciiDoc file named [.path]_index.adoc_ that is located at [.path]_demo-component-b/docs/modules/ROOT/pages_.
 
-A cross reference to this page from a page also in the Component B, ROOT: `\xref:index.adoc[]`.
+To create a cross reference *to this page from another page in the ROOT module of Component B*, the xref syntax would be `\xref:index.adoc[]`.
 
-A cross reference to this page from a page in Component B, but *NOT* in the ROOT module: `\xref:ROOT:index.adoc[]`.
+To create a cross reference *to this page from a page in Module One of Component B*, the xref syntax would be `\xref:ROOT:index.adoc[]`.
+
+To create a cross reference *to this page from a page in Component A*, the xref syntax would be `xref:1.0@component-b::index.adoc[]`.
