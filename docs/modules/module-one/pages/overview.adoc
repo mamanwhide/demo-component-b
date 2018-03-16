@@ -5,8 +5,9 @@ endif::[]
 // Settings
 :idprefix:
 :idseparator: -
+:demo:
 
-This is version 1.0.0 of Module One in Component B.
+This is version *{demo}* of Module One in Component B.
 
 == Page source
 
@@ -18,4 +19,10 @@ To create a cross reference *to this page from another page in Module One*, the 
 
 To create a cross reference *to this page from a page in the ROOT module of Component B*, the xref syntax would be `\xref:module-one:overview.adoc[]`.
 
-To create a cross reference *to this page from a page in Component A*, the xref syntax would be `\xref:1.0@component-b:module-one:overview.adoc[]`.
+=== Always target the latest version of this page
+
+To create a cross reference *to the latest version of this page from a page in Component A*, the xref syntax would be `\xref:component-b:module-one:overview.adoc[]`.
+
+=== Target a specific version of this page
+
+To create a cross reference *to version 1.0 of this page from a page in Component A*, the xref syntax would be `\xref:1.0@component-b:module-one:overview.adoc[]`.
