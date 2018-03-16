@@ -1,5 +1,5 @@
 name: component-b
-title: Docs Component B
+title: Component B
 version: '1.0'
 nav:
 - modules/ROOT/nav.adoc

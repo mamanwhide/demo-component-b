@@ -1,1 +1,1 @@
-* xref:index.adoc[The B Overview]
+* xref:index.adoc[Welcome]
