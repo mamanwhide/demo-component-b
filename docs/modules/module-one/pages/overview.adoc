@@ -5,9 +5,8 @@ endif::[]
 // Settings
 :idprefix:
 :idseparator: -
-:demo:
 
-This is version *{demo}* of Module One in Component B.
+This is version *{page-component-version}* of Module One in Component B.
 
 == Page source
 
