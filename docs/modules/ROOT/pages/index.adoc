@@ -1,10 +1,4 @@
 = Welcome to Component B!
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
-// Settings
-:idprefix:
-:idseparator: -
 
 This is the automatic start page for version *{page-component-version}* of Component B.
 
