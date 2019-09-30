@@ -1,10 +1,4 @@
 = Module One Overview
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
-// Settings
-:idprefix:
-:idseparator: -
 
 This is version *{page-component-version}* of Module One in Component B.
 
