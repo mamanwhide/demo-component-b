@@ -1,0 +1,12 @@
+= Module One Overview
+:navtitle: Module One Overview
+:description: Overview of Module One in Component B
+:keywords: module-one, component-b
+
+== About Module One
+Module One focuses on innovative technology applications for rural development. It includes initiatives like the INESA project, which aims to empower villages through digital transformation.
+
+== Key Resources
+- xref:module-one/coconut-draft-inesa.adoc[COCONUT Draft]
+
+Learn more about our efforts to bring technology to rural communities.

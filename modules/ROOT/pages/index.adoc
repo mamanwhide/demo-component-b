@@ -1,0 +1,13 @@
+= Component B
+:navtitle: Home
+:description: Welcome to Component B documentation
+:keywords: component-b, documentation
+
+== Introduction
+Welcome to the documentation for Component B. This component provides resources and guides for leveraging technology in innovative ways, including the INESA initiative for rural digital transformation.
+
+== Explore the Documentation
+- xref:module-one/overview.adoc[Module One Overview]
+- xref:module-one/coconut-draft-inesa.adoc[COCONUT Draft: INESA Initiative]
+
+Explore these sections to learn more about our initiatives and how to get involved.
