@@ -10,7 +10,7 @@ content:
       branches: main
 ui:
   bundle:
-    url: /home/inesa/BlueBook/ui-bundle
+    url: ./ui-bundle
     snapshot: true
 output:
   dir: ./build
