@@ -1,4 +1,4 @@
-= COCONUT Draft: INESA (Inovasi dan Edukasi Desa)
+= INESA (Inovasi dan Edukasi Desa)
 :navtitle: COCONUT Draft
 :description: INESA initiative for digital transformation in rural areas
 :keywords: COCONUT, INESA, IoT, AI, digital transformation
