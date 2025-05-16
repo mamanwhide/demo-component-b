@@ -24,6 +24,13 @@ jobs:
         run: |
           docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache --stacktrace antora-playbook.yml
 
+      # Debug direktori build
+      - name: Debug build directory
+        run: |
+          echo "Checking build directory"
+          ls -l build
+          ls -l build/site
+
       # Debug secrets
       - name: Debug secrets
         run: |
@@ -49,16 +56,15 @@ jobs:
 
       # Unggah artefak build
       - name: Upload build to VPS
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_SSH_PORT }}
-          script: |
-            echo "Preparing to upload build"
-            ls -l build
-            echo "Uploading build to /var/www/html/build"
+          source: "build"
+          target: "/var/www/html/"
+          strip_components: 0
 
       # Finalisasi deployment
       - name: Finalize deployment
