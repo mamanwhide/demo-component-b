@@ -22,7 +22,7 @@ jobs:
       # Build dengan Antora
       - name: Build with Antora
         run: |
-          docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache --stacktrace antora-playbook.yml
+          docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache --stacktrace /home/inesa/BlueBook/antora-playbook.yml
 
       # Deploy ke VPS melalui SSH
       - name: Deploy to VPS
