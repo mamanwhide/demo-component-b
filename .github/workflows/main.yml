@@ -29,7 +29,6 @@ jobs:
         run: |
           echo "Checking build directory"
           ls -l build
-          ls -l build/site
 
       # Debug secrets
       - name: Debug secrets
