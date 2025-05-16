@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_SSH_PORT }}
-          script: 
+          script: |
             rm -rf /var/www/html/build
             mkdir -p /var/www/html/build
             ls -ld /var/www/html/build
