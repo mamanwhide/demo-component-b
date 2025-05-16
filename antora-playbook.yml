@@ -1,5 +1,5 @@
 site:
-  title: Demo Docs Site
+  title: COCONUT - Bluebook
   url: http://localhost
   start_page: component-b::index.adoc
 content:
