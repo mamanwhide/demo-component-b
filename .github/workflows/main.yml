@@ -24,6 +24,14 @@ jobs:
         run: |
           docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache --stacktrace antora-playbook.yml
 
+      # Debug secrets
+      - name: Debug secrets
+        run: |
+          echo "VPS_HOST is set: ${{ secrets.VPS_HOST != '' }}"
+          echo "VPS_USERNAME is set: ${{ secrets.VPS_USERNAME != '' }}"
+          echo "VPS_SSH_KEY is set: ${{ secrets.VPS_SSH_KEY != '' }}"
+          echo "VPS_SSH_PORT is set: ${{ secrets.VPS_SSH_PORT != '' }}"
+
       # Persiapkan direktori di VPS
       - name: Prepare VPS
         uses: appleboy/ssh-action@v1.0.3
