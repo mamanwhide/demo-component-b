@@ -43,7 +43,7 @@ jobs:
           script: |
             echo "Running as user: $USER"
             sudo rm -rf /var/www/html/build
-            mkdir -p /var/www/html/build
+            sudo cp -r build /var/www/html
             sudo chown $USER:$USER /var/www/html/build
             ls -ld /var/www/html/build
 
