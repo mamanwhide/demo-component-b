@@ -21,4 +21,6 @@ COCONUT, established as a think tank in April 2008, drives impactful programs su
 - Nurman Awaluddin -- COCONUT
 - Andi Resky Amaliah -- COCONUT
 
+== Bluebook Version
+Bluebook -- 1.0
 Dive into these sections to understand how COCONUT organizes its activities, from recruitment and onboarding to learning programs and strategic meetings, all aimed at creating a lasting impact.

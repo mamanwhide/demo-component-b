@@ -1,5 +1,5 @@
-name: component-b
-title: Component B
+name: coconut-bluebook
+title: Bluebook-draft
 version: 1.0
 nav:
   - modules/ROOT/nav.adoc
