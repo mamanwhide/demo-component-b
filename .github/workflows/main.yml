@@ -22,7 +22,7 @@ jobs:
       # Build dengan Antora
       - name: Build with Antora
         run: |
-          antora antora-playbook.yml
+          docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache --stacktrace antora-playbook.yml
       # Debug secrets
       - name: Debug secrets
         run: |
