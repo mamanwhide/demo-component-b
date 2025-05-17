@@ -29,6 +29,7 @@ jobs:
         run: |
           echo "Checking build directory in runner"
           ls -l build
+          ls -l build/component-b
 
       # Debug secrets
       - name: Debug secrets
@@ -46,6 +47,23 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_SSH_PORT }}
+          script: |
+            echo "Preparing temporary directory"
+            rm -rf /home/inesa/BlueBook/build
+
+      # Unggah artefak build ke VPS
+      - name: Upload build to VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_SSH_PORT }}
+          source: "build"
+          target: "/home/inesa/BlueBook/"
+          strip_components: 0
+          overwrite: true
+          debug: true
 
       # Pindahkan build ke direktori tujuan
       - name: Move build to web directory
@@ -58,9 +76,10 @@ jobs:
           script: |
             echo "Moving build to /var/www/html/build"
             rm -rf /var/www/html/build
-            cp -r build /var/www/html/build
+            cp -r /home/inesa/BlueBook/build /var/www/html/
+            chmod -R 755 /var/www/html/build
             ls -la /var/www/html/build
-            rm -rf /home/inesa/tmp/build
+            rm -rf /home/inesa/tmp
 
       # Finalisasi deployment
       - name: Finalize deployment
@@ -74,4 +93,5 @@ jobs:
             echo "Finalizing deployment"
             sudo nginx -t
             sudo systemctl restart nginx
+            ls -l /var/www/html/build/component-b
             echo "Deployment completed"
