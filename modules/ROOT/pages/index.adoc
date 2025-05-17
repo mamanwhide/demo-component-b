@@ -17,6 +17,7 @@ COCONUT, established as a think tank in April 2008, drives impactful programs su
 - xref:module-one/meeting.adoc[Meeting]
 
 == Authors
+- Nurman Awaluddin -- COCONUT
 - Abd Rahman -- COCONUT
 - Andi Resky Amaliah -- COCONUT
 
