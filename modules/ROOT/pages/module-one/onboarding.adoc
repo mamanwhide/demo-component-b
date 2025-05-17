@@ -4,7 +4,7 @@
 :keywords: COCONUT, onboarding, induction
 
 == Overview
-The *Onboarding* section covers the induction process (*Pengukuhan*) for new COCONUT members, ensuring they are equipped to contribute to our initiatives.
+The *Onboarding* section covers the induction process for new COCONUT members, ensuring they are equipped to contribute to our initiatives.
 
 == Details
 [NOTE]
