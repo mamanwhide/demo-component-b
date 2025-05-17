@@ -22,8 +22,7 @@ jobs:
       # Build dengan Antora
       - name: Build with Antora
         run: |
-          docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache --stacktrace antora-playbook.yml
-
+          antora antora-playbook.yml
       # Debug secrets
       - name: Debug secrets
         run: |
@@ -42,9 +41,9 @@ jobs:
           port: ${{ secrets.VPS_SSH_PORT }}
           script: |
             echo "Running as user: $USER"
-            sudo rm -rf /var/www/html/build
-            sudo cp -r build /var/www/html
-            sudo chown $USER:$USER /var/www/html/build
+            rm -rf /var/www/html/build
+            cp -r build /var/www/html
+            /var/www/html/build
             ls -ld /var/www/html/build
 
       # Unggah artefak build
@@ -70,8 +69,6 @@ jobs:
           port: ${{ secrets.VPS_SSH_PORT }}
           script: |
             echo "Finalizing deployment"
-            sudo chown -R www-data:www-data /var/www/html/build
-            sudo chmod -R 755 /var/www/html/build
             sudo nginx -t
             sudo systemctl restart nginx
             echo "Deployment completed"
