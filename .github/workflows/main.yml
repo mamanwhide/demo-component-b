@@ -42,8 +42,7 @@ jobs:
           script: |
             echo "Running as user: $USER"
             rm -rf /var/www/html/build
-            cp -r build /var/www/html
-            /var/www/html/build
+            cp -r build /var/www/html/
             ls -ld /var/www/html/build
 
       # Unggah artefak build
