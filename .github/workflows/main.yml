@@ -23,6 +23,14 @@ jobs:
       - name: Build with Antora
         run: |
           docker run -u $(id -u) -v $PWD:/antora:Z --rm -t antora/antora --cache-dir=./.cache --stacktrace antora-playbook.yml
+
+      # Debug direktori build
+      - name: Debug build directory
+        run: |
+          echo "Checking build directory in runner"
+          ls -l build
+          ls -l build/site
+
       # Debug secrets
       - name: Debug secrets
         run: |
@@ -39,14 +47,23 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_SSH_PORT }}
-          script: |
-            echo "Running as user: $USER"
-            rm -rf /var/www/html/build
-            cp -r build /var/www/html/
-            ls -ld /var/www/html/build
 
-      # Unggah artefak build
+      # Unggah artefak build ke VPS
       - name: Upload build to VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_SSH_PORT }}
+          source: "build"
+          target: "/home/inesa/BlueBook/repos/demo-component-b/"
+          strip_components: 0
+          overwrite: true
+          debug: true
+
+      # Pindahkan build ke direktori tujuan
+      - name: Move build to web directory
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -54,9 +71,11 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_SSH_PORT }}
           script: |
-            echo "Preparing to upload build"
-            ls -la build
-            echo "Uploading build to /var/www/html/build"
+            echo "Moving build to /var/www/html/build"
+            rm -rf /var/www/html/build
+            cp -r /home/inesa/BlueBook/repos/demo-component-b/build /var/www/html/build
+            ls -la /var/www/html/build
+            rm -rf /home/inesa/tmp/build
 
       # Finalisasi deployment
       - name: Finalize deployment
